@@ -1,0 +1,12 @@
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\utils\ResultApi.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\controller\UserController.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\service\UserService.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\DemoApplication.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\entity\User.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\utils\StatusEnum.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\config\RedisConfig.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\service\impl\UserServiceImpl.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\po\Result.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\mapper\UserMapper.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\utils\RedisUtils.java
+D:\Software\Code\java-candidate-test\src\main\java\com\example\demo\request\CheckUserReq.java

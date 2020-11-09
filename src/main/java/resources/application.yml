@@ -1,0 +1,51 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /
+
+
+spring:
+  application:
+    name: condidate
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    serialization:
+      write-dates-as-timestamps: false
+  # Redis配置
+  redis:
+    # redis数据库索引
+    database: 0
+    # 要连接的主机ip
+    host: localhost
+    #连接密码
+    password: Vlease.2019
+    # port连接的端口
+    port: 6379
+    #连接池
+    jedis:
+      pool:
+        max-active: 5 #最大连接数（负数表示没有限制）
+        min-idle: 0   #最小空闲连接
+        max-idle: 5   #最大空闲连接
+        max-wait: -1  #最大阻塞等待时间（负数表示没有限制）
+    timeout: 6000     #连接超时时间（毫秒
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+  global-config:
+    # 逻辑删除配置
+    db-config:
+      # 删除前
+      logic-not-delete-value: 1
+      # 删除后
+      logic-delete-value: 0
