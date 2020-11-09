@@ -24,7 +24,7 @@ public class RedisUtils {
      * 写入缓存
      *
      * @param key
-     * @param offset   位 8Bit=1Byte
+     * @param offset 位 8Bit=1Byte
      * @return
      */
     public boolean setBit(String key, long offset, boolean isShow) {
@@ -38,7 +38,6 @@ public class RedisUtils {
         }
         return result;
     }
-
 
 
     /**
@@ -139,9 +138,7 @@ public class RedisUtils {
      * @return
      */
     public Object get(final String key) {
-        Object result = null;
-        ValueOperations<Serializable, Object> operations = redisTemplate.opsForValue();
-        result = operations.get(key);
+        Object result = redisTemplate.opsForValue().get(key);
         return result;
     }
 
@@ -260,12 +257,12 @@ public class RedisUtils {
     /**
      * 有序集合获取排名
      *
-     * @param key 集合名称
+     * @param key   集合名称
      * @param value 值
      */
     public Long zRank(String key, Object value) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        return zset.rank(key,value);
+        return zset.rank(key, value);
     }
 
 
@@ -274,9 +271,9 @@ public class RedisUtils {
      *
      * @param key
      */
-    public Set<ZSetOperations.TypedTuple<Object>> zRankWithScore(String key, long start,long end) {
+    public Set<ZSetOperations.TypedTuple<Object>> zRankWithScore(String key, long start, long end) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        Set<ZSetOperations.TypedTuple<Object>> ret = zset.rangeWithScores(key,start,end);
+        Set<ZSetOperations.TypedTuple<Object>> ret = zset.rangeWithScores(key, start, end);
         return ret;
     }
 
@@ -288,7 +285,7 @@ public class RedisUtils {
      */
     public Double zSetScore(String key, Object value) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        return zset.score(key,value);
+        return zset.score(key, value);
     }
 
 
@@ -312,7 +309,7 @@ public class RedisUtils {
      */
     public Set<ZSetOperations.TypedTuple<Object>> reverseZRankWithScore(String key, long start, long end) {
         ZSetOperations<String, Object> zset = redisTemplate.opsForZSet();
-        Set<ZSetOperations.TypedTuple<Object>> ret = zset.reverseRangeByScoreWithScores(key,start,end);
+        Set<ZSetOperations.TypedTuple<Object>> ret = zset.reverseRangeByScoreWithScores(key, start, end);
         return ret;
     }
 

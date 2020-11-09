@@ -45,9 +45,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         Integer id2 = req.getId2();
         list.add(id1);
         list.add(id2);
-        boolean temp = redisUtils.exists(list.toString());
+        String key=list.toString();
+        boolean temp = redisUtils.exists(key);
+        Object object= redisUtils.get(key);
+        System.out.println(object);
         if (temp) {
-            return redisUtils.get(list.toString()).toString();
+            return (String) redisUtils.get(key);
         }
         return null;
     }
@@ -63,7 +66,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
         List<Integer> list = new LinkedList<>();
         list.add(user.getId1());
         list.add(user.getId2());
-        redisUtils.add(list.toString(), userID);
+        redisUtils.set(list.toString(), userID);
         return userID;
     }
 

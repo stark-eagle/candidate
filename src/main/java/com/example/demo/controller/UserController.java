@@ -29,7 +29,7 @@ public class UserController {
             userID = userService.addUser(req);
         }
 
-        return ResultApi.success().put("userID", userID);
+        return ResultApi.success().putData("userID", userID);
     }
 
     @GetMapping("/addToRedis")
